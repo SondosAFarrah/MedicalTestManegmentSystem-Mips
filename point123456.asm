@@ -157,8 +157,7 @@ backToMenu:
     beq $s1,$t0, deleteTest
 exit:    
     # Exit the program
-    li $v0, 10
-    syscall
+    b main
 #----------------Read File Function - -------------------------#
 readFile:
  # Open the file
@@ -537,7 +536,8 @@ closeFile:
     	move $a0,$s1      		# file descriptor to close
     	syscall
     	jal readFile
-    	b exit
+    	#sondos2020
+    	b main
 #-----------------------------------------------------------option2----------------------------------------------------------------------------------------
 searchByID:
     li $v0, 4
